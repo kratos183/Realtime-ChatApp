@@ -1,0 +1,23 @@
+{
+  "name": "realtime-app",
+  "version": "1.0.0",
+  "description": "Industry-ready realtime app demo with Socket.IO, Express, chat, notifications, live updates, and a simple multiplayer canvas.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "vite",
+    "dev": "concurrently --raw \"node server.js\" \"cd client && vite\""
+  },
+  "author": "You (edit package.json if you like)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "dotenv": "^16.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "concurrently": "^8.2.2"
+  }
+}

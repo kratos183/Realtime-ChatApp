@@ -1,0 +1,45 @@
+/* style.css - minimal clean layout */
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #3b82f6;
+  --muted: #9ca3af;
+  --panel: #071026;
+  --glass: rgba(255,255,255,0.03);
+  --text: #e6eef8;
+}
+
+* { box-sizing: border-box; font-family: Inter, system-ui, Arial, sans-serif; }
+html,body { height: 100%; margin:0; background: linear-gradient(180deg,#071026 0%, #0b1220 100%); color:var(--text); }
+.container { max-width: 1100px; margin: 24px auto; padding: 18px; }
+header h1 { margin:0; font-size:1.6rem; }
+.sub { color:var(--muted); margin-top:6px; }
+
+.controls { display:flex; gap:8px; margin:14px 0; align-items:center; flex-wrap:wrap; }
+.controls input { padding:8px; border-radius:6px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--text); min-width:140px; }
+.controls button { padding:8px 10px; border-radius:6px; border:0; cursor:pointer; background:var(--accent); color:white; }
+
+.main-grid { display:grid; grid-template-columns: 1fr 320px; gap:14px; align-items:start; }
+.canvas-panel { grid-column: 1 / -1; }
+
+.panel { background:var(--card); padding:12px; border-radius:10px; box-shadow: 0 6px 20px rgba(2,6,23,0.6); }
+.chat-panel { height:420px; display:flex; flex-direction:column; }
+.messages { flex:1; overflow:auto; padding:8px; border-radius:6px; background:var(--glass); margin-bottom:8px; }
+.messages .msg { margin-bottom:8px; }
+.messages .meta { font-size:0.8rem; color:var(--muted); }
+form { display:flex; gap:6px; }
+form input { flex:1; padding:8px; border-radius:6px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--text); }
+form button { padding:8px 10px; border-radius:6px; border:0; background:var(--accent); color:white; cursor:pointer; }
+
+.right-panel .notifications { max-height:160px; overflow:auto; padding:8px; background:var(--glass); border-radius:6px; margin-bottom:8px; }
+.counter-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+#counterValue { font-size:1.5rem; min-width:48px; text-align:center; padding:8px; background:var(--panel); border-radius:8px; }
+#incBtn { padding:6px 10px; border-radius:6px; border:0; background:#10b981; cursor:pointer; color:white; }
+
+.room-info { background:rgba(255,255,255,0.02); padding:8px; border-radius:6px; margin-bottom:8px; color:var(--muted); }
+
+canvas { width:100%; border-radius:8px; background:linear-gradient(180deg,#021124,#031426); display:block; }
+
+footer { margin-top:14px; color:var(--muted); }
+.typing { color:var(--muted); font-size:0.9rem; margin-bottom:6px; }
+.hint { color:var(--muted); font-size:0.85rem; margin-top:8px; }

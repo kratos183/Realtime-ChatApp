@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Realtime App — Chat / Notifications / Live Updates / Multiplayer</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Socket.IO client from server (served automatically by socket.io) -->
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Realtime App</h1>
+      <p class="sub">Chat • Notifications • Live counter • Multiplayer canvas</p>
+    </header>
+
+    <section class="controls">
+      <label>
+        Your name:
+        <input type="text" id="username" placeholder="Type a display name" />
+      </label>
+      <label>
+        Room:
+        <input type="text" id="roomId" placeholder="global" />
+      </label>
+      <button id="joinBtn">Join Room</button>
+      <button id="leaveBtn" disabled>Leave Room</button>
+    </section>
+
+    <main class="main-grid">
+      <div class="panel chat-panel">
+        <h2>Chat</h2>
+        <div id="messages" class="messages"></div>
+        <div class="typing" id="typing"></div>
+        <form id="chatForm">
+          <input id="msgInput" autocomplete="off" placeholder="Type message..." />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+
+      <div class="panel right-panel">
+        <h2>Notifications</h2>
+        <div id="notifications" class="notifications"></div>
+
+        <h3>Live counter</h3>
+        <div class="counter-row">
+          <div id="counterValue">0</div>
+          <button id="incBtn">+1</button>
+        </div>
+
+        <h3>Room info</h3>
+        <div id="roomInfo" class="room-info">Not joined</div>
+
+        <h3>Send a Notification</h3>
+        <input id="notifTitle" placeholder="Title" />
+        <input id="notifBody" placeholder="Body" />
+        <button id="sendNotifBtn">Send Notification</button>
+      </div>
+
+      <div class="panel canvas-panel">
+        <h2>Shared Canvas (move mouse)</h2>
+        <canvas id="sharedCanvas" width="800" height="400"></canvas>
+        <p class="hint">Your cursor (blue) and others (colored dots).</p>
+      </div>
+    </main>
+
+    <footer>
+      <small>Demo • Not for production as-is. Use Redis/DB for multi-instance & improved security.</small>
+    </footer>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
